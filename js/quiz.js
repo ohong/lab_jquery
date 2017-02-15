@@ -2,6 +2,7 @@
  * Simple quiz generator.
  *
  * @author Robert C. Duvall
+ * @modified by Oscar Hong and Shirom Kapur
  */
 
 // the possible questions in the quiz
@@ -26,7 +27,8 @@ var questions = [{
     choices: [20, 30, 40, 50, 64],
     correctAnswer: 4
 }];
-var quiz = document.getElementById('quiz');
+var quiz = $('#quiz')[0];
+console.log(quiz);
 var questionsCompleted = 0;
 
 
@@ -42,7 +44,7 @@ function currentQuestion() {
 
 // returns user's selected answer
 function getChoice() {
-    var element = document.querySelector('input[name="answer"]:checked');
+    var element = $('input[name="answer"]:checked')[0];
     if (element === null) {
         return -1;
     } else {
